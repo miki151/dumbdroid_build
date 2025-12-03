@@ -95,7 +95,7 @@ finalize_device() {
 }
 
 finalize_treble() {
-    cd device/phh/treble
+#    cd device/phh/treble
 #    git clean -fdx
 #    bash generate.sh lineage
 #    cd ../../..
@@ -103,10 +103,10 @@ finalize_treble() {
     bash build.sh release
     cp TrebleApp.apk ../vendor/hardware_overlay/TrebleApp/app.apk
     cd ..
-    cd vendor/hardware_overlay
-    git add TrebleApp/app.apk
-    git commit -m "[TEMP] Up TrebleApp to $BUILD_DATE"
-    cd ../..
+#    cd vendor/hardware_overlay
+#    git add TrebleApp/app.apk
+#    git commit -m "[TEMP] Up TrebleApp to $BUILD_DATE"
+#    cd ../..
 }
 
 build_device() {
