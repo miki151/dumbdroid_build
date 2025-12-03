@@ -1519,5 +1519,5 @@
   <superproject name="platform/superproject" remote="aosp" revision="android-14.0.0_r67"/>
   
   <contactinfo bugurl="go/repo-bug"/>
-  <include name="local_manifests_treble/dumbdroid.xml"/>
+  <include name="local_manifests/dumbdroid.xml"/>
 </manifest>
