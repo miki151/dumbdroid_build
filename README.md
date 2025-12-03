@@ -1,6 +1,8 @@
 
 ## Building Dumbdroid GSIs ##
 
+It is recommended to have at least 32GB of RAM + 32GB of swap!
+
 Set up your environment by referring to [LineageOS Wiki](https://wiki.lineageos.org/devices/TP1803/build) (mainly "Install the build packages" and "Install the repo command").
 
 Create a new working directory for your LineageOS build and navigate to it:
