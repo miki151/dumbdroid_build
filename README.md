@@ -1,7 +1,7 @@
 
 ## Building Dumbdroid GSIs ##
 
-It is recommended to have at least 32GB of RAM + 32GB of swap, and at least 300GB of free disk space!
+It is recommended to have at least 32GB of RAM + 32GB of swap, and at least 300GB of free disk space! Building from scratch will take around two hours on a high end PC.
 
 Set up your environment by referring to [LineageOS Wiki](https://wiki.lineageos.org/devices/TP1803/build) (mainly "Install the build packages" and "Install the repo command").
 
