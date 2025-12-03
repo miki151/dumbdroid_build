@@ -5,7 +5,7 @@ Set up your environment by referring to [LineageOS Wiki](https://wiki.lineageos.
 
 Create a new working directory for your LineageOS build and navigate to it:
 
-    mkdir lineage-21-build-td; cd lineage-21-build-td
+    mkdir dumbdroid_build; cd dumbdroid_build
 
 Initialize your LineageOS workspace:
 
@@ -13,19 +13,13 @@ Initialize your LineageOS workspace:
 
 Clone both this and the patches repos:
 
-    git clone https://github.com/AndyCGYan/lineage_build_unified lineage_build_unified -b lineage-21-td
-    git clone https://github.com/AndyCGYan/lineage_patches_unified lineage_patches_unified -b lineage-21-td
+    git clone https://github.com/miki151/dumbdroid_build lineage_build_unified
+    git clone https://github.com/miki151/dumbdroid_patches lineage_patches_unified
 
-Finally, start the build script - for example, to build for all supported archs:
+Finally, start the build script - for example, to build all supported Dumbdroid variants:
 
-    bash lineage_build_unified/buildbot_unified.sh treble A64VN A64VS A64GN 64VN 64VS 64GN
+    bash lineage_build_unified/buildbot_unified.sh treble DG31 DG30 DV31 DV30
 
 Be sure to update the cloned repos from time to time!
 
 ---
-
-Note: VNDKLite targets are generated from built images instead of source-built - refer to [sas-creator](https://github.com/AndyCGYan/sas-creator).
-
----
-
-This script is also used to make device-specific and/or personal builds. To do so, understand the script, and try the `device` and `personal` keywords.
