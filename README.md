@@ -1,5 +1,5 @@
 
-## Building TrebleDroid-based LineageOS GSIs ##
+## Building Dumbdroid GSIs ##
 
 Set up your environment by referring to [LineageOS Wiki](https://wiki.lineageos.org/devices/TP1803/build) (mainly "Install the build packages" and "Install the repo command").
 
