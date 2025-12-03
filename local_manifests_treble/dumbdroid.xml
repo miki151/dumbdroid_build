@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project path="packages/apps/DumbdroidUpdater"
+           name="miki151/DumbdroidUpdater"
+           remote="github"
+           revision="master" />
+	<project path="packages/apps/DumbdroidPanel"
+           name="miki151/DumbdroidPanel"
+           remote="github"
+           revision="master" />
+	<project path="packages/apps/DumbdroidAdmin"
+           name="miki151/device_owner"
+           remote="github"
+           revision="main" />
+</manifest>

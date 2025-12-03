@@ -96,9 +96,9 @@ finalize_device() {
 
 finalize_treble() {
     cd device/phh/treble
-    git clean -fdx
-    bash generate.sh lineage
-    cd ../../..
+#    git clean -fdx
+#    bash generate.sh lineage
+#    cd ../../..
     cd treble_app
     bash build.sh release
     cp TrebleApp.apk ../vendor/hardware_overlay/TrebleApp/app.apk
@@ -116,27 +116,26 @@ build_device() {
 
 build_treble() {
     case "${1}" in
-        ("A64VN") TARGET=a64_bvN;;
-        ("A64VS") TARGET=a64_bvS;;
-        ("A64GN") TARGET=a64_bgN;;
-        ("64VN") TARGET=arm64_bvN;;
-        ("64VS") TARGET=arm64_bvS;;
-        ("64GN") TARGET=arm64_bgN;;
+        ("DG30") TARGET=dg30;;
+        ("DG31") TARGET=dg31;;
+        ("DV30") TARGET=dv30;;
+        ("DV31") TARGET=dv31;;
         (*) echo "Invalid target - exiting"; exit 1;;
     esac
+    echo "Compiling: lineage_${TARGET}-${aosp_target_release}-userdebug"
     lunch lineage_${TARGET}-${aosp_target_release}-userdebug
     make installclean
-    WITH_ADB_INSECURE=true make -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) systemimage
+    make DISABLE_STUB_VALIDATION=true -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) systemimage
     SIGNED=false
-    if [ ${SIGNABLE} = true ] && [[ ${TARGET} == *_bg? ]]
+    if [ ${SIGNABLE} = true ]
     then
-        WITH_ADB_INSECURE=true make -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) target-files-package otatools
+        make DISABLE_STUB_VALIDATION=true -j$(lscpu -b -p=Core,Socket | grep -v '^#' | sort -u | wc -l) target-files-package otatools
         bash ./lineage_build_unified/sign_target_files.sh $OUT/signed-target_files.zip
         unzip -joq $OUT/signed-target_files.zip IMAGES/system.img -d $OUT
         SIGNED=true
         echo ""
     fi
-    mv $OUT/system.img ~/build-output/lineage-21.0-$BUILD_DATE-UNOFFICIAL-${TARGET}$(${PERSONAL} && echo "-personal" || echo "")$(${SIGNED} && echo "-signed" || echo "").img
+    mv $OUT/system.img ~/build-output/dumbdroid-$BUILD_DATE-${TARGET}-signed.img
     #make vndk-test-sepolicy
 }
 
@@ -154,11 +153,7 @@ else
     prep_${MODE}
     apply_patches patches_platform
     apply_patches patches_${MODE}
-    if ${PERSONAL}
-    then
-        apply_patches patches_platform_personal
-        apply_patches patches_${MODE}_personal
-    fi
+    apply_patches patches_dumbdroid
     finalize_${MODE}
     echo ""
 fi
