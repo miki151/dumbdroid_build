@@ -22,7 +22,7 @@ Finally, start the build script - for example, to build all supported Dumbdroid 
 
     bash lineage_build_unified/buildbot_unified.sh treble DG31 DG30 DV31 DV30
 
-If syncing errors out with RESOURCE_EXHAUSTED, just give it another try. Afterwards, add the 'nosync' option to buildbot_unified.sh, to avoid syncing every time:
+In case of RESOURCE_EXHAUSTED or other quota errors, just give it another run. Afterwards, add the 'nosync' option to buildbot_unified.sh, to avoid syncing every time you build:
 
     bash lineage_build_unified/buildbot_unified.sh treble nosync ...
 
