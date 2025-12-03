@@ -11,7 +11,7 @@ Create a new working directory for your LineageOS build and navigate to it:
 
 Initialize your LineageOS workspace:
 
-    repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+    repo init -u https://github.com/miki151/dumbdroid_manifests.git --git-lfs
 
 Clone both this and the patches repos:
 
