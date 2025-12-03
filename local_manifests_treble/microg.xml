@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project path="vendor/microg"
+  <project path="vendor/partner_gms"
            name="lineageos4microg/android_vendor_partner_gms"
            remote="github"
            revision="master" />
