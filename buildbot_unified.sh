@@ -55,10 +55,10 @@ START=`date +%s`
 BUILD_DATE="$(date -u +%Y%m%d)"
 
 prep_build() {
-    echo "Preparing local manifests"
-    mkdir -p .repo/local_manifests
-    cp ./lineage_build_unified/local_manifests_${MODE}/*.xml .repo/local_manifests
-    echo ""
+#    echo "Preparing local manifests"
+#    mkdir -p .repo/local_manifests
+#    cp ./lineage_build_unified/local_manifests_${MODE}/*.xml .repo/local_manifests
+#    echo ""
 
     echo "Syncing repos"
     repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
