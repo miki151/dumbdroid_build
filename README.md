@@ -21,6 +21,13 @@ Install the repo command
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
     chmod a+x ~/.bin/repo
 
+Add a swap file if you don't have a swap partition active
+
+    sudo fallocate -l 32G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+
 ## Build Dumbdroid ##
 
 Create a new working directory for your LineageOS build and navigate to it:
