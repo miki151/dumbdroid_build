@@ -5,6 +5,7 @@ It is recommended to have at least 32GB of RAM + 32GB of swap, and at least 300G
 
 ## Set up your environment ##
 
+    apt update
     apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev \
        gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev x11proto-core-dev \
        libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig python3 \
