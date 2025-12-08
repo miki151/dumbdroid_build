@@ -5,6 +5,7 @@ It is recommended to have at least 32GB of RAM + 32GB of swap, and at least 300G
 
 ## Set up your environment ##
 
+    apt update
     apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev \
        gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev x11proto-core-dev \
        libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig python3 \
@@ -21,6 +22,13 @@ Install the repo command
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
     chmod a+x ~/.bin/repo
 
+Add a swap file if you don't have a swap partition active
+
+    sudo fallocate -l 32G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+
 ## Build Dumbdroid ##
 
 Create a new working directory for your LineageOS build and navigate to it:
@@ -29,7 +37,7 @@ Create a new working directory for your LineageOS build and navigate to it:
 
 Initialize your LineageOS workspace:
 
-    repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+    repo init -u https://github.com/miki151/dumbdroid_manifests.git --git-lfs
 
 Clone both this and the patches repos:
 
