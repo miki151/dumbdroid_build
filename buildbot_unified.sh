@@ -116,10 +116,10 @@ build_device() {
 
 build_treble() {
     case "${1}" in
-        ("DG30") TARGET=dg30;;
-        ("DG31") TARGET=dg31;;
-        ("DV30") TARGET=dv30;;
-        ("DV31") TARGET=dv31;;
+        ("DG30") TARGET=gapps30;;
+        ("DG31") TARGET=gapps31;;
+        ("DV30") TARGET=vanilla30;;
+        ("DV31") TARGET=vanilla31;;
         (*) echo "Invalid target - exiting"; exit 1;;
     esac
     echo "Compiling: lineage_${TARGET}-${aosp_target_release}-userdebug"
